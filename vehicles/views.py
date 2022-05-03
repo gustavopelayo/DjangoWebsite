@@ -13,5 +13,5 @@ class UserVehicleListView(ListView):
     context_object_name = 'vehicles'
     
     def get_queryset(self):
-        print(Vehicle.objects.filter(owner= self.request.user))
-        return Vehicle.objects.filter(owner= self.request.user)
+        print(Vehicle.objects.filter(owner_id= self.request.user.id))
+        return Vehicle.objects.filter(owner_id= self.request.user.id)

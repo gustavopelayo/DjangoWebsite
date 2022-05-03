@@ -1,43 +1,43 @@
 [
     {
-      "brand": "Volvo",
+      "brand": "VOLVO",
       "user_id": 1
     },
     {
-    "brand": "Mazda",
+    "brand": "MAZDA",
       "user_id": 2
     },
     {
 
-        "brand": "Telsa",
+        "brand": "TESLA",
+        "user_id": 5
+    },
+    {
+        "brand": "MAZDA",
         "user_id": 1
     },
     {
-        "brand": "Mazda",
-        "user_id": 1
+      "brand": "VOLVO",
+      "user_id": 7
     },
     {
-      "brand": "Volvo",
-      "user_id": 1
+      "brand": "VOLVO",
+      "user_id": 5
     },
     {
-      "brand": "Volvo",
-      "user_id": 1
-    },
-    {
-        "brand": "Tesla",    
+        "brand": "TESLA",    
       "user_id": 2
     },
     {
-        "brand": "Mazda",        
+        "brand": "MAZDA",        
       "user_id": 2
     },
     {
-        "brand": "Tesla",
-      "user_id": 1
+        "brand": "TESLA",
+      "user_id": 8
     },
     {
-      "brand": "Tesla",
+      "brand": "TESLA",
     "user_id": 3
   }
   ]
