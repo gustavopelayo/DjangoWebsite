@@ -1,0 +1,29 @@
+
+
+  {% extends "blog/base.html" %}
+  {% block content %}
+      {% for vehicle in vehicles %}
+          <article class="media content-section">
+
+                <a class="mr-2" href="{% url 'vehicle-list' %}">{{ vehicle.model }}</a>
+               
+      {% endfor %}
+ <!-- Gallery -->
+ <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="https://www.w3schools.com/w3images/lights.jpg">
+          <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+   
+</div>
+</article>
+
+  <!-- Gallery -->
+ 
+  {% endblock content %}

@@ -10,6 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
@@ -21,24 +22,40 @@
 </head>
 <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">ChargeIt</a>
           
           <img class = "rounded-circle article-img" src = "{% static "/blog/charge.jpg" %}"  >
 
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              
               <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
             </div>
+                      <a class="navbar-brand mr-4" href="{% url 'vehicle-list' %}">My Vehicles</a>
+
+
+            
             <!-- Navbar Right Side -->
+
+
+
+            <li class="nav-item">
+              <a href="{% url 'post-create' %}">
+                <img class = "rounded-circle article-img bg-image hover-zoom"  src = "{% static "/blog/carCharge.jpg" %}">              
+              </a>              
+            </li>
+         
+
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-              <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+              <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>      
               <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
               <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>

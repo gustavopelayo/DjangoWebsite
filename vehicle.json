@@ -1,0 +1,43 @@
+[
+    {
+      "brand": "Volvo",
+      "user_id": 1
+    },
+    {
+    "brand": "Mazda",
+      "user_id": 2
+    },
+    {
+
+        "brand": "Telsa",
+        "user_id": 1
+    },
+    {
+        "brand": "Mazda",
+        "user_id": 1
+    },
+    {
+      "brand": "Volvo",
+      "user_id": 1
+    },
+    {
+      "brand": "Volvo",
+      "user_id": 1
+    },
+    {
+        "brand": "Tesla",    
+      "user_id": 2
+    },
+    {
+        "brand": "Mazda",        
+      "user_id": 2
+    },
+    {
+        "brand": "Tesla",
+      "user_id": 1
+    },
+    {
+      "brand": "Tesla",
+    "user_id": 3
+  }
+  ]
