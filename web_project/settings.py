@@ -84,6 +84,23 @@ DATABASES = {
         'NAME': 'db.sqlite3',
     }
 }
+"""
+
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'OPTIONS': {
+            'options': '-c search_path=chargers'
+        },
+      'NAME':'inesctec',
+      'USER':'inesctec',
+      'PASSWORD':'inesctec',
+      'HOST':'postgres',
+      'PORT':'5432',
+      
+   }
+}
+"""
 
 
 # Password validation
