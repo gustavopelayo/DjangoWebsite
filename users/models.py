@@ -13,7 +13,7 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return f'{self.user.username} profile'
+        return f'{self.user.username} Profile'
 
     def save(self, *args, **kwargs):
 
@@ -26,7 +26,5 @@ class Profile(models.Model):
 
             img.thumbnail(output_size)
             img.save(self.image.path)
-    
-    class Meta:
-        db_table = "profile"
+
 

@@ -2,7 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from users.models import Profile
-from vehicles.models import Vehicle
+from .forms import PostForm
+
+
+
+
+
 from django.views.generic import (
     ListView,
     DetailView,
@@ -47,14 +52,19 @@ class PostDetailView(DetailView):
     model = Post
 
 
-
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView,Profile):
     model = Post
-    fields = [ 'vehicle']
+    form_class = PostForm
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

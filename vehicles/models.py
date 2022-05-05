@@ -22,8 +22,3 @@ class Vehicle(models.Model):
 
     def __str__(self):
             return self.model
-    class Meta:
-        db_table = "Vehicle"
-
-
-

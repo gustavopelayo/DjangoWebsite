@@ -8,8 +8,7 @@ from vehicles.models import Vehicle
 class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE,  null=True)
-
+    vehicle =  models.ForeignKey(Vehicle, on_delete=models.CASCADE, default=None )
     
     def get_absolute_url(self):
 

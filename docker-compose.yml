@@ -1,22 +1,12 @@
 
-version: "3.8"
+version: '3'
 
 services:
-  webserver:
-    hostname: webserver
+  web:
     build: .
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    restart: always
-    container_name: webserver
+    container_name: charge_interface
     volumes:
-      - webserver:/webserver
+      - .:/charge_interface
     ports:
       - "8000:8000"
-        
-networks:
-  default:
-    name: dockernetwork
-        
-volumes:
-  webserver:
-      

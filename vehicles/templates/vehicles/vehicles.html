@@ -18,15 +18,15 @@
 
       <!-- DEMO 1 Item-->
       <div class="col-lg-6 mb-3 mb-lg-0">
-        {% if vehicle.model == "Volvo" %}
-        <div class="hover hover-1 text-white rounded"><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
+        {% if vehicle.model == "Volvo" or vehicle.model == "VOLVO"  %}
+        <div class="hover hover-1 text-white rounded" href="{%url 'vehicle-detail' vehicle.id %}" ><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Volvo </span>Caption</h3>
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         {%endif%} 
-        {% if vehicle.model == "Mazda"%}
+        {% if vehicle.model == "MAZDA" or  vehicle.model == "Mazda"%}
         <div class="hover hover-1 text-white rounded"><img src="https://www.razaoautomovel.com/wp-content/uploads/2020/09/Mazda-MX-30-3_925x520_acf_cropped.jpg" alt="">
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
@@ -34,19 +34,26 @@
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         {%endif%} 
-        {% if vehicle.model == "Tesla"%}
+        {% if vehicle.model == "TESLA" or  vehicle.model == "Tesla" %}
         <div class="hover hover-1 text-white rounded"><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
             <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Tesla </span>Caption</h3>
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
+
+          
         {%endif%}          
         </div>
       </div>
+      
       {%endfor%}
       <!-- DEMO 1 Item-->
     </div>
+    <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-dark">Add Vehicle</button>
+  </div>
+
   </div>
 
  

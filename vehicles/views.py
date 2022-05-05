@@ -5,6 +5,7 @@ from users.models import Profile
 
 from django.views.generic import (
     ListView,
+    DetailView,
 
 )
 class UserVehicleListView(ListView):
@@ -15,3 +16,6 @@ class UserVehicleListView(ListView):
     def get_queryset(self):
         print(Vehicle.objects.filter(owner_id= self.request.user.id))
         return Vehicle.objects.filter(owner_id= self.request.user.id)
+
+class UserVehicleDetailView(DetailView):
+    model = Vehicle
