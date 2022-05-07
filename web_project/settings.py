@@ -31,10 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
     'vehicles.apps.VehiclesConfig',
+    'chargers.apps.ChargersConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
