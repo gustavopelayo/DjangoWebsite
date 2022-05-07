@@ -11,18 +11,23 @@
       
   <!-- DEMO 1 -->
   <div class="py-5">
-    <h3 class="font-weight-bold mb-0">My Vehicles</h3>
-    <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <h3 class="font-weight-bold mb-0" href = "google.com">My Vehicles</h3>
+    
+    <p class="font-italic text-muted mb-4">You can check all of your vehicle stats here.</p>
     <div class="row">
       {% for vehicle in vehicles %}
 
       <!-- DEMO 1 Item-->
       <div class="col-lg-6 mb-3 mb-lg-0">
         {% if vehicle.model == "Volvo" or vehicle.model == "VOLVO"  %}
-        <div class="hover hover-1 text-white rounded" href="{%url 'vehicle-detail' vehicle.id %}" ><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
-          <div class="hover-overlay"></div>
+        <div class="hover hover-1 text-white rounded" ><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
+          <div class="hover-overlay" ></div>
           <div class="hover-1-content px-5 py-4">
-            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Volvo </span>Caption</h3>
+            <a href=" {%url 'vehicle-detail' vehicle.id %}">
+             
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Volvo </span></h3>
+          </a>
+
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         {%endif%} 
@@ -30,15 +35,22 @@
         <div class="hover hover-1 text-white rounded"><img src="https://www.razaoautomovel.com/wp-content/uploads/2020/09/Mazda-MX-30-3_925x520_acf_cropped.jpg" alt="">
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
-            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Mazda </span>Caption</h3>
+            <a href=" {%url 'vehicle-detail' vehicle.id %}">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Mazda </span></h3>
+          </a>
+
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
         {%endif%} 
         {% if vehicle.model == "TESLA" or  vehicle.model == "Tesla" %}
-        <div class="hover hover-1 text-white rounded"><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
+        <div class="hover hover-1 text-white rounded"><img src="https://www.tesla.com/ownersmanual/images/GUID-BEE67A59-6DD7-460C-9C49-0DD47E707A02-online-en-US.jpg" alt="">
           <div class="hover-overlay"></div>
           <div class="hover-1-content px-5 py-4">
-            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Tesla </span>Caption</h3>
+            <a href=" {%url 'vehicle-detail' vehicle.id %}">
+
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">Tesla </span></h3>
+          </a>
+
             <p class="hover-1-description font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
 

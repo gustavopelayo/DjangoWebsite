@@ -78,11 +78,27 @@ WSGI_APPLICATION = 'web_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db.sqlite3',
     }
+}
+"""
+
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'OPTIONS': {
+            'options': '-c search_path=chargers'
+        },
+      'NAME':'inesctec',
+      'USER':'inesctec',
+      'PASSWORD':'inesctec',
+      'HOST':'localhost',
+      'PORT':'5432',
+   }
 }
 
 

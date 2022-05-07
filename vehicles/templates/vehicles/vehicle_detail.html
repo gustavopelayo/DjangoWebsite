@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+{% block content %}
+        <article class="media content-section">
+            {{object.model}}
+            {% if object.model == "Volvo" or object.model == "VOLVO"  %}
+                <h1> pila  </h1>
+                {%endif%}
+        </article>
+{% endblock content %}
