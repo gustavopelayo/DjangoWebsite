@@ -14,8 +14,8 @@ class UserChargersListView(ListView):
     context_object_name = 'chargers'
     
     def get_queryset(self):
-        print(chargers.objects.filter(owner_id= self.request.user.id))
-        return chargers.objects.filter(owner_id= self.request.user.id)
+        print(chargers.objects.filter(self.request.user.id))
+        return chargers.objects.filter(self.request.user.id)
 
 class UserchargersDetailView(DetailView):
     model = chargers

@@ -11,7 +11,6 @@ class chargers(models.Model):
         (PORTO, "Porto"),
         )
 
-    owner =  models.ForeignKey(User, on_delete=models.CASCADE) 
     
     model = models.CharField(max_length=9,
        
