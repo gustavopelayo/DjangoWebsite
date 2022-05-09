@@ -17,5 +17,5 @@ class UserChargersListView(ListView):
         print(chargers.objects.filter(owner_id= self.request.user.id))
         return chargers.objects.filter(owner_id= self.request.user.id)
 
-class UserchargersDetailView(DetailView):
+class UserchargersDetailView(ListView):
     model = chargers

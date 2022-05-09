@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -8,6 +9,7 @@ from chargers.models import chargers
 
 class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
+    
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     vehicle =  models.ForeignKey(Vehicle, on_delete=models.CASCADE, default=None )
     chargers=models.ForeignKey(chargers, on_delete=models.CASCADE,default=None)

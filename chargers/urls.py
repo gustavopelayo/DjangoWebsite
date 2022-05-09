@@ -5,7 +5,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('vehicles',UserChargersListView.as_view(), name='chargers-list'),
-    path('vehicles/<int:pk>',  UserchargersDetailView.as_view(), name='chargers-detail'),
+    path('vehicles/<int:vehicle>',  UserchargersDetailView.as_view(), name='chargers-detail'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
