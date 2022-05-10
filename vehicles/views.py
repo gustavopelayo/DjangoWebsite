@@ -19,7 +19,6 @@ class UserVehicleListView(ListView):
     def get_queryset(self):
         print(Vehicle.objects.filter(owner_id= self.request.user.id))
         return Vehicle.objects.filter(owner_id= self.request.user.id)
-
 class UserVehicleDetailView(ListView):
     model = Post
     template_name = 'vehicles/vehicle_detail.html'  # <app>/<model>_<viewtype>.html
@@ -32,4 +31,5 @@ class UserVehicleDetailView(ListView):
         
         print(Post.objects.filter(vehicle= vehicle))
         return Post.objects.filter(vehicle= vehicle)
+
 

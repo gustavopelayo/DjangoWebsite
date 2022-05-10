@@ -11,17 +11,14 @@ class chargers(models.Model):
         (PORTO, "Porto"),
         )
 
-    owner =  models.ForeignKey(User, on_delete=models.CASCADE) 
-    
-    brand = models.CharField
-    model = models.CharField(max_length=9,
+    nickname = models.CharField(max_length=350,
        
                     choices=CHARGERS_CHOICES,
                     default=MAIA)
 
-    battery = models.CharField
     def __str__(self):
-            return self.model
-
+            return self.nickname
+    chargepower = models.IntegerField()    
+    shelly = models.CharField(max_length = 100, default= None)
     class Meta:
         db_table = "chargers"

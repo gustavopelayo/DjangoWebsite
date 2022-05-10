@@ -10,7 +10,11 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-
+    middlename = models.CharField(max_length = 300, default= "middle_name")
+    nif = models.IntegerField(unique  =True, default= 000000000)
+    address = models.CharField(max_length = 400, default= "address")
+    city = models.CharField(max_length = 50, default= "city")
+    postalcode = models.CharField(max_length = 150, default= "0000-000")
 
     def __str__(self):
         return f'{self.user.username} Profile'
