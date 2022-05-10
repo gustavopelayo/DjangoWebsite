@@ -1,15 +1,18 @@
 from ssl import VERIFY_CRL_CHECK_CHAIN
-from django.shortcuts import render
 from .models import Vehicle
-from django.contrib.auth.models import User
-from users.models import Profile
 from blog.models import Post
+from vehicles import forms
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
-    DetailView,
+    CreateView,
 
 )
+from django.contrib.auth.models import User
+
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from vehicles.forms import VehicleAddForm
 
 class UserVehicleListView(ListView):
     model = Vehicle
@@ -32,4 +35,18 @@ class UserVehicleDetailView(ListView):
         print(Post.objects.filter(vehicle= vehicle))
         return Post.objects.filter(vehicle= vehicle)
 
+class AddVehicleView(LoginRequiredMixin, CreateView):
+    
+    model = Vehicle
+    form_class = VehicleAddForm
 
+    def get_form_kwargs(self):
+           
+            kwargs = super().get_form_kwargs()
+            kwargs['user'] = self.request.user
+            return kwargs
+
+    def form_valid(self, form):
+            
+            form.instance.owner = self.request.user
+            return super().form_valid(form)

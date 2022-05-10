@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Vehicle(models.Model):
 
@@ -24,6 +25,9 @@ class Vehicle(models.Model):
 
     def __str__(self):
             return self.model
+    
+    def get_absolute_url(self):
 
+        return reverse('vehicle-list')
     class Meta:
         db_table = "vehicles"
