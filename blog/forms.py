@@ -16,4 +16,3 @@ class PostForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.fields['vehicle'].queryset = Vehicle.objects.filter(owner=user)
-        self.fields['chargers']

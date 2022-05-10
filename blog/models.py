@@ -9,12 +9,12 @@ from chargers.models import chargers
 
 class Post(models.Model):
     hourin = models.DateTimeField(default=timezone.now)
-    hourout = models.DateTimeField(default=12)
+    hourout = models.DateTimeField(default=timezone.now)
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     vehicle =  models.ForeignKey(Vehicle, on_delete=models.CASCADE, default=None )
     chargers=models.ForeignKey(chargers, on_delete=models.CASCADE,default=None)
-    power = models.IntegerField()
+    power = models.IntegerField(default=0)
     def get_absolute_url(self):
 
         return reverse('post-detail', kwargs ={'pk': self.pk} )
