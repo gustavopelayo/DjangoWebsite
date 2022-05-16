@@ -20,8 +20,7 @@ def initDB():
   cursor.execute('CREATE SCHEMA IF NOT EXISTS "chargers"')
   
    # Create Fixed Variables table if doesn't exist
-  cursor.execute('CREATE TABLE IF NOT EXISTS "fixedvars" ("id" SERIAL PRIMARY KEY, "instalationpower" INT, "numberchargers" INT, \
-                 "powercost" INT, "occupancycost" INT)')
+
 
   # Commit changes
   conn.commit()

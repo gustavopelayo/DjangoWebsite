@@ -1,15 +1,112 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<article class="media content-section">
-<h2>
+<html>
 
-    {% for post in posts %}
+<head>
 
-    {{post.date_posted}}
+  {% for post in posts %}
+  {% if forloop.first %}  
+    
+  {% if post.vehicle.model == "Tesla"%}
+  <div class="hover hover-1 text-white rounded center"><img src="https://www.tesla.com/ownersmanual/images/GUID-BEE67A59-6DD7-460C-9C49-0DD47E707A02-online-en-US.jpg" alt="">
+  {%endif%}
+  {% if post.vehicle.model == "Mazda"%}
+    <div class="hover hover-1 text-white rounded center"><img src="https://www.razaoautomovel.com/wp-content/uploads/2020/09/Mazda-MX-30-3_925x520_acf_cropped.jpg" alt="">
+  {%endif%}  
+  {% if post.vehicle.model == "Volvo"%}
+  <div class="hover hover-1 text-white rounded center"><img src="https://media.wired.com/photos/5da789a3a30cfa0008c53259/master/pass/Transpo_volvo_259187_Volvo_XC40_Recharge_P8_AWD_in_Sage_Green.png" alt="">
+  {%endif%}
+
+   
+    <div class="hover-1-content px-5 py-4">
+      <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light"> Vehicle model: {{post.vehicle.model}} </span></h3>
+
+      <h3 class="hover-1-description  font-weight-bold mb-0"> <span class="font-weight-light"> Vehicle brand: {{post.vehicle.brand}}  </span></h3>
+    </div>
+
+      
+  </div>
+    <div classa="container">
+      <h1 class="display-4">{{post.vehicle.brand}} {{post.vehicle.model}}</h1>
+      <p class="lead">Here you can find information on your vehicle charges.</p>
+      <hr class="my-4">
+
+
+
+
+      <p>In this section you can find some info and statistics in your latest charges </p>
+    </div>
+    
+    {%endif%}
     {%endfor%}
-</h2>
+
+  <h1>
+    Total charges:  {{posts.count}}
+  </h1>
 
 
+  
 
-</article>
+  <body>
+    <head>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawPieChart);
+
+      function drawChart() {
+
+        var data = new google.visualization.arrayToDataTable([
+        
+          ['Hour in', 'Power'],
+          {% for post in posts %}
+          ['{{post.hourin}}', '{{post.power}}'],
+          {%endfor%}
+          ]);
+        var options = {
+          title: 'Power charged',
+          legend: { position: 'none' },
+        };
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+      function drawPieChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: false,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <head>
+      <table class="columns">
+        <tr>
+
+          <td> <div id="chart_div" style="border: 1px solid #ccc"></div> </td>
+          <td> <div id="piechart_3d" style="border: 1px solid #ccc"></div></td>
+
+      </tr>
+    </table>
+
+
+  </body>
+
+  </html>
+
+
+ 
+
 {% endblock content %}

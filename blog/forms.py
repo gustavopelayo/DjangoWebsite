@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ('vehicle','chargers')
+        fields = ('vehicle','chargers', 'power')
     
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
