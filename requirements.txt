@@ -13,3 +13,4 @@ tzdata
 urllib3
 Markdown
 requests
+plotly
