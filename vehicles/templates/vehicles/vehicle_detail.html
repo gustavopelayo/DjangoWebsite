@@ -8,7 +8,7 @@
 
 
     <head>
-    
+  
       {% for post in posts %}
       {% if forloop.first %}  
         
@@ -25,6 +25,8 @@
       {%endif%}
        
       </div>
+      <div class="container" style="text-align: center;">
+
 
           <p class="display-4"> Vehicle   Model: {{post.vehicle.model}}</p>
             <hr class="my-4">
@@ -34,6 +36,7 @@
           <p class="lead">Here you can find information on your vehicle charges.</p>
           <hr class="my-4">
         
+        </div>
 
         {%endif%}
         {%endfor%}
@@ -42,31 +45,35 @@
       </head>
     
       <body>
-    <div>         
-    <h5 class="display-4"><span class="font-weight-light"> Total charges:  {{posts.count}}    </h5>
-    </div>
-    <hr class="my-4">
-    <div>         
-    <h5 class="display-4"><span class="font-weight-light"> Hour vs Power </h5>
-  {% autoescape off %}
-    {{ graph }}
-  {% endautoescape %}
-  </div>
-  <hr class="my-4">
-  <div> 
-  <h5 class="display-4"><span class="font-weight-light"> Charge Usage </h5>
-    {% autoescape off %}
-  {{ fig }}
-{% endautoescape %}
-</div>
 
-  {% for post in posts %} 
-    {{forloop.counter}}
-  {%endfor%}
+        <div class="container" style="text-align: center;">
+
+                <div>         
+                <h5 class="display-4"><span class="font-weight-light"> Total charges:  {{posts.count}}    </h5>
+                </div>
+                <hr class="my-4">
+                <div>         
+                <h5 class="display-4"><span class="font-weight-light"> Hour vs Power </h5>
+              {% autoescape off %}
+                {{ graph }}
+              {% endautoescape %}
+              </div>
+              <hr class="my-4">
+              <div> 
+              <h5 class="display-4"><span class="font-weight-light"> Charge Usage </h5>
+                {% autoescape off %}
+              {{ fig }}
+            {% endautoescape %}
+            </div>
+
+              {% for post in posts %} 
+                {{forloop.counter}}
+              {%endfor%}
 
 
+            </div>
 
-</body>
+            </body>
    
 
 
