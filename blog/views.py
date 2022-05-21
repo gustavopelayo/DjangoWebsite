@@ -32,7 +32,9 @@ class PostListView(ListView):
     ordering = ['-hourin']
     paginate_by =5
 
-
+    def get_queryset(self):
+        print(Post.objects.filter(author= self.request.user.id))
+        return Post.objects.filter(author= self.request.user.id)
 class UserPostListView(ListView):
     model = Post
     template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html

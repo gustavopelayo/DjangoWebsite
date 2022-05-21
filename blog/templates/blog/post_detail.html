@@ -13,8 +13,18 @@
               </div>
               {%endif%}
             </div>
-            <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.content }}</p>
+            <h2> Power charged: {{ object.power }}</h2>
+            <hr class="my-4">
+
+            <h4 class="article-title"> Hourin: {{ object.hourin }}</h4>
+            <h4 class="article-title">Hourout: {{ object.hourout }}</h4>
+            <hr class="my-4">
+
+            <h5 class="article-title">Vehicle brand: {{ object.vehicle.brand }}</h5>
+            <h5 class="article-title">Vehicle Model: {{ object.vehicle.model }}</h5>
+            <hr class="my-4">
+
+
           </div>
         </article>
 {% endblock content %}
